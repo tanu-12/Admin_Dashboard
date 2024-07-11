@@ -99,6 +99,12 @@ h6 {
     font-weight: 700;
 }
 
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
 /* css variable*/
 :root {
 
