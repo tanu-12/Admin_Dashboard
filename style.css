@@ -1,0 +1,343 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/*<uniquifier>: Use a unique and descriptive class name*/
+
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+.inter-bold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Inter";
+    font-weight: 700;
+}
+
+/* css variable*/
+:root {
+
+    --main-color: #edeff1;
+    --dashboard: #2e3532;
+    --sections-color: white;
+    --button-color: #8b2635;
+
+    --font-d-size: 0.90rem;
+    --font-cards-size: 0.80rem;
+    --font-title-size: 1.25rem;
+
+
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container {
+    background-color: var(--main-color);
+    display: grid;
+    grid-template-columns: 0.5fr repeat(2, 1fr) 0.75fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: "sidebar1 header header header"
+        "sidebar1 article article sidebar2";
+    height: 100vh;
+    font-size: var(--font-d-size);
+
+}
+
+
+/* .container>* {
+    border: 2px solid red;
+} */
+
+/*styling header*/
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: var(--sections-color);
+    gap: 1rem;
+    padding: 1rem 0;
+    position: sticky
+}
+
+span {
+    font-size: var(--font-title-size);
+}
+
+
+navbar {
+    display: grid;
+    grid-template-columns: 0.25fr 3fr 2fr;
+    /* border: 2px solid yellow; */
+    gap: 0.5rem;
+}
+
+navbar>* {
+    align-self: center;
+    width: 100%;
+}
+
+.navigation {
+    justify-self: center;
+    display: flex;
+    padding-left: 8rem;
+    justify-content: space-evenly;
+
+
+
+}
+
+button {
+    padding-inline: 2rem;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 1.625rem;
+    color: var(--sections-color);
+}
+
+.icons-header {
+    width: 30px;
+    justify-self: flex-end;
+}
+
+.hero-icon {
+    width: 40px;
+}
+
+input[type="search"] {
+    appearance: none;
+    border: none;
+    border-radius: 1.625rem;
+    background-color: var(--main-color);
+    padding: 0.5rem 0;
+}
+
+
+/* sidebar styling*/
+.sidebar1 {
+    grid-area: sidebar1;
+    color: white;
+    background-color: var(--dashboard);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .25fr 2fr 1.75fr;
+    /* gap: 1rem; */
+
+    padding: 0.75rem;
+    padding-bottom: 3rem;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+li {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+    /* font-size: 1rem; */
+    /* width: 100%; */
+    /* height: 100%; */
+
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--sections-color);
+}
+
+.Dashboard h2 {
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.Dashboard .icons {
+    width: 2rem;
+}
+
+.sidebar2 {
+    grid-area: sidebar2;
+    display: grid;
+    grid-template-rows: auto 1fr auto 1fr;
+    background-color: var(--main-color);
+    padding: 1rem;
+
+}
+
+.sidebar2-cards {
+    background-color: var(--sections-color);
+    /* font-size: 0.75rem; */
+    padding-inline: 1rem;
+    margin-bottom: 1rem;
+    font-size: var(--font-cards-size);
+    border-radius: 25px;
+}
+
+.news {
+    margin-top: .5rem;
+}
+
+
+.news::after {
+    content: "";
+    display: block;
+    border: 2px solid #edeff1;
+    width: 100%;
+    height: 2px;
+    margin-top: .25rem;
+
+
+}
+
+
+/*styling projects*/
+article {
+    grid-area: article;
+    background-color: var(--main-color);
+    padding: .85rem;
+
+
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+    padding: 3rem 1rem;
+    /* height: 100%; */
+    gap: 15px;
+
+}
+
+.cards {
+    padding: 1rem;
+
+    background-color: var(--sections-color);
+    border-left: 1rem solid var(--button-color);
+    border-radius: 1rem;
+    text-align: left;
+
+}
+
+.share {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.icons {
+    width: 25px;
+    color: white;
+}
+
+
+.trending {
+
+    padding: 0.75rem;
+}
+
+.trending ul {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+}
