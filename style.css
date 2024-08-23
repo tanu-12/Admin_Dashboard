@@ -261,7 +261,7 @@ a {
 .sidebar2 {
     grid-area: sidebar2;
     display: grid;
-    grid-template-rows: auto 1fr auto 1fr;
+    grid-template-rows: repeat(2, auto, 1fr);
     background-color: var(--main-color);
     padding: 1rem;
 
